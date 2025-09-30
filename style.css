@@ -74,34 +74,69 @@ body {
    border: 1px dashed #a1a1a199;
    border-radius: 5px;
    width: 570px;
-   height: 200px;
+   height: 300px;
    position: relative;
+   cursor: pointer;
+   font-size: 14px;
+   font-weight: 500;
+}
+
+.card__item:hover {
+   border: 1px solid #a1a1a199;
+   box-shadow: 8px 8px 4px 0px #00000066;
 }
 
 .card__item-info-block {
    display: flex;
    flex-direction: column;
-   gap: 6px;
+   gap: 5px;
+   padding: 15px;
+}
+
+.card__item-name {
+   font-weight: 700;
+   font-size: 20px;
 }
 
 .card__item-image {
-   width: 200px;
-   width: 163;
+   width: 300px;
    border-top-left-radius: 5px;
    border-bottom-left-radius: 5px;
 }
 
-.card__item-delete-button {
+.card-item__block-buttons {
    position: absolute;
+   display: flex;
+   flex-direction: row-reverse;
+   bottom: 10px;
+   right: 10px;
+   gap: 10px;
+}
+
+.card__item-delete-button {
    right: 30px;
    bottom: 20px;
    font-weight: 700;
    font-size: 15px;
    color: #fff;
    background: #df0000;
-   padding: 15px 20px;
+   padding: 10px 15px;
    border-radius: 5px;
    border: 1px solid #a1a1a199;
+}
+
+.card__item-edit-button {
+   font-weight: 700;
+   font-size: 15px;
+   color: #fff;
+   background: #ecba04;
+   padding: 10px 15px;
+   border-radius: 5px;
+   border: 1px solid #a1a1a199;
+}
+
+.card__item-edit-button:hover {
+   background: #ffc803;
 }
 
 .card__item-delete-button:hover {
@@ -109,10 +144,74 @@ body {
 }
 
 .wrapper__modal {
+   position: fixed;
+   top: 0;
+   left: 0;
+   background: #0000004d;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.modal__body {
    position: absolute;
-   top: 50%;
-   transform: translateY(-50%);
-   left: 50%;
-   transform: translateX(-50%);
-   background: #ffffff24;
+   width: 600px;
+   height: 300px;
+   background-color: #fff;
+   display: flex;
+   text-align: center;
+   flex-direction: column;
+   z-index: 100;
+}
+
+.modal__title {
+   font-weight: 700;
+   font-size: 20px;
+   padding: 20px;
+}
+
+.modal__form {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+
+.modal__form-input-title,
+.modal__form-input-description {
+   margin-left: 20px;
+   padding: 15px;
+   width: 450px;
+   background: #a1a1a11a;
+   border: 1px solid #a1a1a199;
+   border-radius: 5px;
+}
+
+.modal__button-block {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   font-family: Montserrat;
+   font-weight: 700;
+}
+.modal__button-save,
+.modal__button-confirmation {
+   background: #00ca51;
+   padding: 15px 30px;
+   border-radius: 5px;
+   font-family: Montserrat;
+   font-weight: 700;
+   color: #fff;
+   font-size: 15px;
+}
+
+.modal__button-cancel {
+   background: #df0000;
+   padding: 15px 30px;
+   border-radius: 5px;
+   font-family: Montserrat;
+   font-weight: 700;
+   color: #fff;
+   font-size: 15px;
 }
