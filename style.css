@@ -70,12 +70,11 @@ body {
 }
 .card__item {
    display: flex;
-   gap: 20px;
+   gap: 10px;
    border: 1px dashed #a1a1a199;
    border-radius: 5px;
    width: 570px;
    height: 300px;
-   position: relative;
    cursor: pointer;
    font-size: 14px;
    font-weight: 500;
@@ -89,8 +88,9 @@ body {
 .card__item-info-block {
    display: flex;
    flex-direction: column;
-   gap: 5px;
-   padding: 15px;
+   gap: 10px;
+   justify-content: space-between;
+   padding: 5px;
 }
 
 .card__item-name {
@@ -105,12 +105,10 @@ body {
 }
 
 .card-item__block-buttons {
-   position: absolute;
    display: flex;
    flex-direction: row-reverse;
-   bottom: 10px;
-   right: 10px;
-   gap: 10px;
+   gap: 5px;
+   justify-content: space-around;
 }
 
 .card__item-delete-button {

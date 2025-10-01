@@ -148,7 +148,7 @@ function createOrderElement(order) {
    editButton.addEventListener("click", () => renderEditModal(order));
    blockButtons.appendChild(editButton);
 
-   item.appendChild(blockButtons);
+   blockInfo.appendChild(blockButtons);
 
    return item;
 }
@@ -194,9 +194,17 @@ function updateCardInDOM(updatedOrder) {
 
    const titleEl = card.querySelector(".card__item-title");
    const descEl = card.querySelector(".card__item-description");
+   const statusEl = card.querySelector(".card__item-status");
+   const imageEl = card.querySelector(".card__item-image");
 
    if (titleEl) titleEl.textContent = `задание: ${updatedOrder.title}`;
    if (descEl) descEl.textContent = `описание: ${updatedOrder.description}`;
+   if (statusEl && updatedOrder.status !== undefined)
+      statusEl.textContent = `status: ${updatedOrder.status}`;
+   if (imageEl && updatedOrder.assignee && updatedOrder.assignee.avatar) {
+      imageEl.src = updatedOrder.assignee.avatar;
+      imageEl.alt = updatedOrder.assignee.name || "";
+   }
 }
 
 function renderDeleteModal(id) {
